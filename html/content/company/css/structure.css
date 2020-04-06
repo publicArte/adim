@@ -7446,6 +7446,9 @@ html, body {
 	#Content .gallery .gallery-item {
 		width: 100%
 	}
+  .brand-s {
+    max-width: 30% !important;
+  }
 }
 /* Retina | iPad ----------------------------------------------------------------------------------------------- Retina | iPad */
 

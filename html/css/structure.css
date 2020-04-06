@@ -7585,6 +7585,9 @@ body {
         right: 11px;
     }
 }
+    img.scale-with-grid, #Content img {
+        max-width: 30%;
+    }
 
 @media only screen and (max-width: 767px) and (min-width: 480px){
 #Content .gallery:not(.gallery-columns-1) .gallery-item {
