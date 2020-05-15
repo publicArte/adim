@@ -2,17 +2,45 @@
 /* BASE */
 /***************************************************************/
 
+#menu>ul>li>a {
+  font-size: 1em;
+}
+
+#Top_bar #logo img {
+  max-height: 120%;
+}
+
+.top_bar_left {
+  height: 6.5em;
+}
+
+.menu_wrapper {
+  margin-top: 0.5em;
+}
+
+.is-sticky .menu_wrapper {
+  margin: 0;
+}
+
 #contactWrapper h3 {
-  color: white;
   margin: 5%;
-  margin-left: 35%;
+  color: white;
+  margin-left: 33%;
+}
+
+div > p {
+  text-align: justify;
 }
 
 /***************************************************************/
 /* Brands Popup */
 /***************************************************************/
 
-#bPop-1, #bPop-2, #bPop-3, #bPop-4 {
+#bPop-1, #bPop-2, #bPop-3, #bPop-4, #bPop-5, #bPop-6, #bPop-7, #bPop-8, #bPop-9, 
+#bPop-10, #bPop-11, #bPop-12, #bPop-13, #bPop-14, #bPop-15, #bPop-16, #bPop-17,
+#bPop-18, #bPop-19, #bPop-20, #bPop-21, #bPop-22, #bPop-23, #bPop-24, #bPop-25, 
+#bPop-26, #bPop-27, #bPop-28, #bPop-29, #bPop-30, #bPop-31, #bPop-32,#bPop-33, 
+#bPop-34, #bPop-35, #bPop-36, #bPop-37, #bPop-38, #bPop-39, #bPop-40, #bPop-41, #bPop-42{
    width: 100%;
    height: 100%;
    opacity: 95%;
