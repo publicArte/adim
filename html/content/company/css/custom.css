@@ -53,6 +53,25 @@ div > p {
   padding: 5em;
 }
 
+#Subheader {
+  height: 10em;
+}
+
+#Subheader .container {
+  top: 3.5em;
+}
+
+.txt-scroll {
+  height: 23em;
+  overflow-x: hidden;
+  overflow-y: scroll;    
+  padding-right: 0.5em;
+}
+
+/***************************************************************/
+/* Banner Slider */
+/***************************************************************/
+
 #slideshow { 
     position: relative; 
     z-index: 1;
@@ -80,22 +99,16 @@ div > p {
 .slide-but {
   top: 55em;
   left: 17.5em;
-  height: 3em;
-  width: 7em;
+  height: 5em;
+  width: 12em;
   text-align: center;
   padding: 0.65em;
+  padding-top: 1.5em;
 }
 
 .slide-but span {
-  top: 1em;
-}
-
-#Subheader {
-  height: 10em;
-}
-
-#Subheader .container {
-  top: 3.5em;
+  top: 5em;
+  font-size: 1.5em;
 }
 
 .slider-container .slider-txt {
@@ -318,7 +331,7 @@ div > p {
 #container-banner {
  width: 100%;
  overflow: hidden;
- margin: 50px auto;
+ margin: 120px auto;
  background: white;
 }
 
