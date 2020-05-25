@@ -3215,13 +3215,9 @@ $(function() {
 // Create default option ".."
   $("<option />", {
        "selected": "selected",
-       "class"   : "arrow",
        "text"    : "Categorías..."
   }).appendTo("#filter-brands nav select");
 
-  $("<i />", {
-    "class"   : "fas fa-angle-down"
-  }).appendTo("#filter-brands option");
 
   // Populate dropdown with menu items
   $("#filter-brands nav span").each(function() {
