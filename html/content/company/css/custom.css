@@ -62,6 +62,10 @@ div > p {
   top: 3.5em;
 }
 
+.copyright {
+  margin-left: 25em;
+}
+
 .txt-scroll {
   height: 23em;
   overflow-x: hidden;
@@ -97,6 +101,36 @@ div > p {
   40%, 60% {
     transform: translate3d(4px, 0, 0);
   }
+}
+
+.fall-down {
+  animation: fall-down .3s linear forwards;
+}
+
+@keyframes fall-down {
+  from {
+    opacity: 0;
+    transform: translateY(-400px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.bounce {
+  transform-origin: bottom;
+  animation: bounce 2s ease alternate;
+}
+
+@keyframes bounce {
+  0%   { transform: scale(1,1)      translateY(0); }
+  10%  { transform: scale(1.1,.9)   translateY(0); }
+  30%  { transform: scale(.9,1.1)   translateY(-100px); }
+  50%  { transform: scale(1.05,.95) translateY(0); }
+  57%  { transform: scale(1,1)      translateY(-7px); }
+  64%  { transform: scale(1,1)      translateY(0); }
+  100% { transform: scale(1,1)      translateY(0); }
 }
 /***************************************************************/
 /* Banner Slider */
@@ -209,42 +243,70 @@ div > p {
   transform: translateZ(3px) scale(0.625)
 }
 /***************************************************************/
-/* Photo Slider */
+/* Photo Grid */
 /***************************************************************/
-
-.w3-content {
-  max-width: 100%;
+.grid-container {
+  width: 100%;
 }
 
-.w3-content > .mySlides{
-  padding-left: 3.5em;
-  transition: all 0.2s ease-in-out;
-
-}
-.w3-row-padding:after, .w3-row-padding:before{
-  content: "";
-  display: table;
-  clear: both; 
-  padding: 0 8px;
+.photo_gallery {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(8, 5vw);
+  grid-gap: 0.5em;
 }
 
-.w3-opacity,.w3-hover-opacity:hover {
-  opacity:0.60;
-}
-.w3-opacity-off,.w3-hover-opacity-off:hover{
-  opacity: 1;
-}
-
-.w3-section {
-  margin-top: 16px!important;
-  margin-bottom: 16px!important;
+.gallery_img {
+  width: 100%!important;
+  height: 100%!important;
+  object-fit: cover;
+  display: block;
+  transition: all 2s ease;
 }
 
-.scroll-auto {
-  overflow-x: scroll;
-  overflow-y: hidden;
-  white-space: nowrap;
+.gallery_img:hover {
+  transform: scale(1.1);
+  cursor: zoom-in;
 }
+
+.gallery_item-1 {
+  grid-column: 1 / span 2;
+  grid-row: 1 / span 2;
+}
+
+.gallery_item-2 {
+  grid-column: 3 / span 2;
+  grid-row: 1 / span 2;
+}
+
+.gallery_item-3 {
+  grid-column: 5 / span 4;
+  grid-row: 1 / span 5;
+}
+
+.gallery_item-4 {
+  grid-column: 1 / span 4;
+  grid-row: 3 / span 3;
+}
+
+.gallery_item-5 {
+  grid-column: 1 / span 2;
+  grid-row: 6 / span 3;
+}
+
+.gallery_item-6 {
+  grid-column: 3 / span 2;
+  grid-row: 6 / span 3;
+}
+
+.gallery_item-7 {
+  grid-column: 5 / span 4;
+  grid-row: 6 / span 3;
+}
+
+/***************************************************************/
+/* Scroll Bar */
+/***************************************************************/
 
 ::-webkit-scrollbar {
   width: 12px;
@@ -261,14 +323,6 @@ div > p {
   background-color: blue;
 }
 
-.w3-col {
-  float: left;
-  width: 100%;
-}
-
-.s4 {
-  width: 33.33333%;
-}
 
 /***************************************************************/
 /* Video config */
@@ -328,6 +382,25 @@ div > p {
 #overlayy iframe {
    width: 100%;
 }
+/***************************************************************/
+/* Photo Swiper */
+/***************************************************************/
+
+.swipeView {
+  display: none;
+  grid-template-columns: repeat(4, 100%);
+  will-change: transform;
+  align-content: center;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+}
+
+.swipe-img {
+  max-width: 100%!important;
+  scroll-snap-align: start;
+}
+
+
 /***************************************************************/
 /* Brands Popup */
 /***************************************************************/
@@ -947,6 +1020,13 @@ select#dropdown:focus {
   .slide-but {
     top: 48em;
     left: 2.5em;
+  }
+
+  .w3-content {
+    display: none;
+  }
+  .swipeView {
+    display: inline-grid;
   }
 
  /* Brands pop */   
