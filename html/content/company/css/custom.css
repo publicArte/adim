@@ -38,12 +38,28 @@ div > p {
 }
 
 .menu-home{
-  margin-left: 6em;
+  margin-left: 10em;
 }
 
 .menu-home .column {
   padding: 2em;
   padding-bottom: 5em;
+}
+
+.menu-home h5 {
+  padding: 1em;
+}
+
+.menu-home ul li:first-child h5 {
+  padding-left: 1.5em;
+}
+
+.menu-home ul li:nth-child(2) h5 {
+  padding-left: 0.5em;
+}
+
+.menu-home ul li:last-child h5 {
+  padding-left: 1.25em;
 }
 
 .carousel-brand-container {
@@ -62,8 +78,36 @@ div > p {
   top: 3.5em;
 }
 
+.icon-sn img{
+  float: left;
+}
+
+.icon-sn a:last-child img {
+  padding-left: 1em;
+}
+
+.one-fourth {
+  animation: fall-down .3s linear forwards;
+}
+
 .copyright {
-  margin-left: 25em;
+  margin-left: 20em;
+}
+
+.footer_copy {
+  background-color: #0052ae!important;
+  color: white;
+}
+
+.icon-up-open-big {
+    color: white;
+}
+
+.icon-sn div a img:hover {
+  animation: shake 0.82s cubic-bezier(.036,.007,.019,.097) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1px;
 }
 
 .txt-scroll {
@@ -71,6 +115,10 @@ div > p {
   overflow-x: hidden;
   overflow-y: scroll;    
   padding-right: 0.5em;
+}
+
+.menu-home img {
+  width: 10em;
 }
 
 .menu-home ul:hover a {
@@ -320,7 +368,7 @@ div > p {
 ::-webkit-scrollbar-thumb {
   border-radius: 10px;
   -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
-  background-color: blue;
+  background-color: #0052ae;
 }
 
 

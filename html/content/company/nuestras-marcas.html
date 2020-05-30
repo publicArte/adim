@@ -89,22 +89,28 @@
                     </div>
                 </div>
             </header>
-            <div id="Subheader" style="padding:50px 0;">
-                <div class="container">
-                    <div class="column one">
-                        <h1 class="title">Nuestras Marcas</h1>
-                        <ul class="breadcrumbs no-link">
-                            <li>
-                                <a href="../../index.html">Inicio</a><span><i class="icon-right-open"></i></span>
-                            </li>
-                            <li>
-                                <a href="#">Nuestras Marcas</a>
-                            </li>
-                        </ul>
-                    </div>
+            <div class="slider-container">
+                <div id="slideshow">
+                    <div>
+                      <img src="images/home1.jpg" title="Adim">
+                    </div> 
+                    <div>
+                      <img src="images/home2.jpg" title="Adim">
+                    </div> 
+                    <div>
+                      <img src="images/home3.jpg" title="Adim">
+                    </div> 
+                    <div>
+                      <img src="images/home4.jpg" title="Adim">
+                    </div> 
                 </div>
-            </div>
-        </div>
+                  <div class="slide-txt-1">
+                    <b>Nuestras Marcas
+                    </b>
+                  </div>
+                  <div class="slide-txt-2">
+                  </div>
+            </div>        </div>
         <div id="Content">
             <div class="content_wrapper clearfix">
                 <div class="sections_group">
@@ -3204,65 +3210,9 @@
     <script src="../../js/scripts.js"></script>
     <script src="../../js/popup.js"></script>
     <script src="../../js/dataFilter.js"></script>
+    <script src="../../js/mobileMenuBrands.js"></script>
+    <script src="../../js/slideShow.js"></script>
 
-    <script type="text/javascript">
-$(function() {
- 
-  // Create the dropdown base
-  $("<select id='dropdown'></select>").appendTo("#filter-brands nav");
-
-// Create default option ".."
-  $("<option />", {
-       "selected": "selected",
-       "text"    : "Categorías..."
-  }).appendTo("#filter-brands nav select");
-
-
-  // Populate dropdown with menu items
-  $("#filter-brands nav span").each(function() {
-    var el = $(this);
-    $("<option />", {
-      "value"       : el.attr("value"),
-      "text"        : el.text()
-    }).appendTo("#filter-brands select");
-  });
-
-  var selected = document.getElementById('dropdown');
-
-  function logValue() {
-    switch (this.value) {
-      case '1':
-        $('#filters #todos').trigger('click');
-        break;
-      case '2':
-        $('#filters #alimentos').trigger('click');
-        break;
-      case '3':
-        $('#filters #hogar').trigger('click');
-        break;
-      case '4':
-        $('#filters #auto').trigger('click');
-        break;
-      case '5':
-        $('#filters #confites').trigger('click');
-        break;
-      case '6':
-        $('#filters #escolar').trigger('click');
-        break;
-      case '7':
-        $('#filters #mascota').trigger('click');
-        break;
-      case '8':
-        $('#filters #desechables').trigger('click');
-        break;
-    }
-  }
-  
-  selected.addEventListener('change', logValue, false);
-
-});
-
-    </script>
 
 </body>
 
