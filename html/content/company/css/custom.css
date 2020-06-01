@@ -46,20 +46,20 @@ div > p {
   padding-bottom: 5em;
 }
 
-.menu-home h5 {
+.menu-home h4 {
   padding: 1em;
 }
 
-.menu-home ul li:first-child h5 {
-  padding-left: 1.5em;
+.menu-home ul li:first-child h4 {
+  padding-left: 0.7em;
 }
 
-.menu-home ul li:nth-child(2) h5 {
-  padding-left: 0.5em;
+.menu-home ul li:nth-child(2) h4 {
+  margin-left: -2em;
 }
 
-.menu-home ul li:last-child h5 {
-  padding-left: 1.25em;
+.menu-home ul li:last-child h4 {
+  margin-left: -0.6em;
 }
 
 .carousel-brand-container {
@@ -129,6 +129,25 @@ div > p {
   opacity: 1;
 }
 
+.hidden {
+  opacity: 0;
+}
+
+.menu-home .bounce {
+  animation-delay: 0.5s; 
+}
+
+
+a.button .button_icon i {
+    color: #fbfbfb;
+}
+
+#Footer .widgets_wrapper {
+  padding-bottom: 80px!important;
+}
+
+/*Animation*/
+
 .shake:hover {
   animation: shake 0.82s cubic-bezier(.036,.007,.019,.097) both;
   transform: translate3d(0, 0, 0);
@@ -180,6 +199,34 @@ div > p {
   64%  { transform: scale(1,1)      translateY(0); }
   100% { transform: scale(1,1)      translateY(0); }
 }
+
+
+.ml12 {
+  font-weight: 200;
+  font-size: 1.8em;
+  text-transform: uppercase;
+  letter-spacing: 0.5em;
+  color: white;
+}
+
+.ml12 .letter {
+  display: inline-block;
+  line-height: 1em;
+}
+
+.ml4 {
+  position: relative;
+  font-weight: 900;
+  font-size: 4.5em;
+}
+.ml4 .letters {
+  position: absolute;
+  margin: auto;
+  left: 0;
+  top: 0.3em;
+  right: 0;
+  opacity: 0; 
+}
 /***************************************************************/
 /* Banner Slider */
 /***************************************************************/
@@ -193,45 +240,62 @@ div > p {
     position: absolute; 
 }
 
+#banner-txt {
+  z-index: 7; 
+  position: absolute; 
+  top: 30em;
+  left: 12.2em;
+}
+
 .slider-container {
   width: 100%;
-  height: 800px;
+  height: 70vh;
+  display: block;
 }
 
 #slideshow img {
   width: 100%;
-  height: 800px;
+  height: 70vh;
 }
 
-.slide-txt-1 {
-  top: 7.5em;
-  left: 3em;
+.slide-txt-top {
+  top: 38em;
+  left: 20em;
   position: absolute; 
   z-index: 7; 
   white-space: nowrap; 
-  font-size: 60px; 
+  font-size: 10px; 
   line-height: 60px; 
   font-weight: 400; 
-  color: #fff; 
   letter-spacing: 0px;
+}
+
+
+.slide-txt-1 {
+  white-space: nowrap; 
+  font-size: 86px; 
+  line-height: 20px; 
+  font-weight: 400; 
+  letter-spacing: 0px;
+  color: #fff!important; 
 }
 
 .slide-txt-2 {
-  top: 24em;
-  left: 7.5em;
-  position: absolute; 
-  z-index: 7; 
-  white-space: 
-  nowrap; 
-  font-size: 25px; 
+  white-space: nowrap; 
+  font-size: 30px; 
   line-height: 22px; 
   font-weight: 400; 
-  color: #fff; 
   letter-spacing: 0px;
+  color: #fff!important; 
+  padding-top: 2em;
+}
+
+.slide-txt-top h1 {
+  color: #fff!important; 
 }
 
 .slide-but {
-  top: 55em;
+  top: 52em;
   left: 17.5em;
   height: 5em;
   width: 12em;
@@ -1029,7 +1093,7 @@ select#dropdown:focus {
 
 @media only screen and (max-width: 480px) {
   .squares-mob {
-    left: -5em;
+    left: -3.5em;
   }
 
   .carousel-brand-container {
@@ -1051,23 +1115,35 @@ select#dropdown:focus {
     height: 600px;
   }
 
+  #banner-txt{
+    top: 35em;
+    left: 3em;
+  }
+    
+  .slide-txt-top {
+    top: 80em;
+    left: 8em;
+    font-size: 5px;
+}
   .slide-txt-1 {
     top: 15.5em;
-    left: 0.75em;
-    font-size: 28px;
-    line-height: 40px;
+    font-size: 35px;
+    line-height: 0;
   }
 
   .slide-txt-2 {
     top: 35em;
-    left: 1.5em;
     font-size: 15px;
-    line-height: 22px;
+    line-height: 0;
   } 
 
   .slide-but {
-    top: 48em;
+    top: 43em;
     left: 2.5em;
+  }
+
+  .ml12 {
+    font-size: 1.3em;
   }
 
   .w3-content {
@@ -1077,6 +1153,10 @@ select#dropdown:focus {
     display: inline-grid;
   }
 
+  #Footer img.scale-with-grid {
+    padding-top: 0em!important;
+    margin-left: 0em!important;
+}
  /* Brands pop */   
  
   #bPopup {
@@ -1218,9 +1298,65 @@ select#dropdown:focus {
     display: inline-block;
     margin-left: 4em;
   }
+
+  .slide-txt-top {
+    top: 33em;
+    left: 4em;
+  }  
+  #banner-txt {
+    top: 27em;
+    left: 2em;
+  }
+  .slide-but {
+    top: 47em;
+    left: 3em;
+  }
 }
 
-/* High-Res*/
+@media only screen and (min-width: 1024px) {
+  #bPopup {
+    left: 3%;
+  }
+
+  #bPop-1 .pad-lbox {
+    height: 13em;  
+  }
+  #bPop-1 .r-box {
+    height: 33.2em;
+  }
+
+  .menu-home {
+      margin-left: 5em;
+  }
+  .carousel-brand-container {
+    margin-left: 2em;
+  }
+  .carousel-but {
+    left: 20em;
+  }
+}
+
+/* Low Res */
+
+@media only screen and (max-width: 1280px) {
+  .slide-txt-top {
+    top: 30vh;
+    left: 8vw;
+  }
+  #banner-txt {
+    top: 18em;
+    left: 7vw;
+  }
+  .slide-txt-2 {
+    line-height: 0px;
+  }
+  .slide-but {
+    top: 65vh;
+    left: 8vw;
+  }
+}
+
+/* MLow-Res*/
 
 @media only screen and (min-width: 1367px) {
   #bPop-1 .r-box {
@@ -1418,7 +1554,30 @@ select#dropdown:focus {
     top: 20%;
     left: 8%;
   }
+  #bPop-1 .pad-lbox {
+      height: 9.55em;
+  }
 
+  .slide-txt-top {
+    top: 33em;
+  }  
+  #banner-txt {
+    top: 27em;
+  }
+  .slide-but {
+    top: 47em;
+  }
+
+  .menu-home {
+    margin-left: 10em;
+  }
+
+  .carousel-brand-container {
+    margin-left: 9em;
+  }
+  .carousel-but {
+    margin-left: 7em;
+  }
 }
 
 /* High-Res 1920 */

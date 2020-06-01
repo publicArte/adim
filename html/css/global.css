@@ -3015,7 +3015,9 @@ ul.list_mixed li:last-child:after, ul.list_check li:last-child:after, ul.list_st
 	display: none
 }
 ul.list_check li, li.list_check {
-	background: url(../images/icons/list_check.png) no-repeat 20px 5px
+  background: url(../content/company/images/list_check.png) no-repeat 20px 6px;
+  background-size: 2em 3em;
+  background-position: 0.3em;
 }
 ul.list_star li, li.list_star {
 	background: url(../images/icons/list_star.png) no-repeat 20px 5px
