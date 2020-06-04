@@ -181,6 +181,9 @@ a.button .button_icon i {
   width: 20vw;
 }
 
+.scale-with-grid[src*="images/home_company_contact1.png"]{
+  margin-left: 4vh;
+}
 
 /*Animation*/
 
@@ -1494,7 +1497,7 @@ select#dropdown:focus {
 
 /* MLow-Res*/
 
-@media only screen and (min-width: 1367px) {
+@media only screen and (min-width: 1300px) {
   
   #bPop-1 .r-box {
     height: 34.8em;
@@ -1681,6 +1684,25 @@ select#dropdown:focus {
   }
   #bPop-42 .r-box {
     height: 35.25em;
+  }
+
+  .slide-txt-top {
+    top: 37vh;
+  }
+  #banner-txt {
+    top: 50vh;
+  }
+  .slide-but {
+   top: 67vh;
+  }
+  .menu-home {
+    margin-left: 11vw;
+  }
+  .carousel-brand-container {
+    margin-left: 11vw;
+  }
+  .carousel-but {
+    left: 33vw;
   }
 
 }
