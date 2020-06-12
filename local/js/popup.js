@@ -108,6 +108,18 @@ document.getElementById('portfoliolist').addEventListener('click', function(evt)
   else if (target.id === 'brand-42') {
     document.getElementById('bPop-42').style.display = 'block';
   }
+  else if (target.id === 'brand-43') {
+    document.getElementById('bPop-43').style.display = 'block';
+  }
+  else if (target.id === 'brand-44') {
+    document.getElementById('bPop-44').style.display = 'block';
+  }
+  else if (target.id === 'brand-45') {
+    document.getElementById('bPop-45').style.display = 'block';
+  }
+  else if (target.id === 'brand-46') {
+    document.getElementById('bPop-46').style.display = 'block';
+  }
   else {
     document.getElementById('bPop-1').style.display = 'none';
     document.getElementById('bPop-2').style.display = 'none';
@@ -144,6 +156,10 @@ document.getElementById('portfoliolist').addEventListener('click', function(evt)
     document.getElementById('bPop-39').style.display = 'none';
     document.getElementById('bPop-41').style.display = 'none';
     document.getElementById('bPop-42').style.display = 'none';
+    document.getElementById('bPop-43').style.display = 'none';
+    document.getElementById('bPop-44').style.display = 'none';
+    document.getElementById('bPop-45').style.display = 'none';
+    document.getElementById('bPop-46').style.display = 'none';
   }
 }, false);
 

@@ -269,36 +269,48 @@ a.button .button_icon i {
 /***************************************************************/
 /* Banner Slider */
 /***************************************************************/
+.slider-container {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  overflow: hidden;
+}
+
+.slider-container:after {
+  display: block;
+  clear: both;
+  overflow: hidden;
+}
 
 #slideshow { 
     position: relative; 
     z-index: 1;
+    height: 0;
+    padding-top: calc(858 / 1920 * 100%)
 }
 
 #slideshow > div { 
     position: absolute; 
+    top: 0;
+    left: 0;
+    max-width: 100%;
+    height: auto;
 }
 
 #banner-txt {
+  top: 335px;
   z-index: 7; 
   position: absolute; 
-  top: 30em;
   left: 12.2em;
 }
 
-.slider-container {
-  width: 100%;
-  height: 70vh;
-  display: block;
-}
-
 #slideshow img {
-  width: 100%;
-  height: 70vh;
+  max-width: 100%;
+  height: auto;
 }
 
 .slide-txt-top {
-  top: 38em;
+  top: 250px;
   left: 20em;
   position: absolute; 
   z-index: 7; 
@@ -334,7 +346,7 @@ a.button .button_icon i {
 }
 
 .slide-but {
-  top: 52em;
+  top: 65vh;
   left: 17.5em;
   height: 5em;
   width: 12em;
@@ -376,23 +388,7 @@ a.button .button_icon i {
   margin-left: 1.5em;
 }
 
-.parallax {
-  position: relative;
-  overflow-x: hidden;
-  overflow-y: hidden;
-  perspective: 8px;
-  perspective-origin: 0%;
-  display: flex;
-}
 
-.background {
-  transform: translateZ(0px);
-}
-
-.foreground {
-  transform-origin: 0;
-  transform: translateZ(3px) scale(0.625)
-}
 /***************************************************************/
 /* Photo Grid */
 /***************************************************************/
@@ -533,24 +529,6 @@ a.button .button_icon i {
 #overlayy iframe {
    width: 100%;
 }
-/***************************************************************/
-/* Photo Swiper */
-/***************************************************************/
-
-.swipeView {
-  display: none;
-  grid-template-columns: repeat(4, 100%);
-  will-change: transform;
-  align-content: center;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-}
-
-.swipe-img {
-  max-width: 100%!important;
-  scroll-snap-align: start;
-}
-
 
 /***************************************************************/
 /* Brands Popup */
@@ -560,7 +538,8 @@ a.button .button_icon i {
 #bPop-10, #bPop-11, #bPop-12, #bPop-13, #bPop-14, #bPop-15, #bPop-16, #bPop-17,
 #bPop-18, #bPop-19, #bPop-20, #bPop-21, #bPop-22, #bPop-23, #bPop-24, #bPop-25, 
 #bPop-26, #bPop-27, #bPop-28, #bPop-29, #bPop-30, #bPop-31, #bPop-32,#bPop-33, 
-#bPop-34, #bPop-35, #bPop-36, #bPop-37, #bPop-38, #bPop-39, #bPop-40, #bPop-41, #bPop-42{
+#bPop-34, #bPop-35, #bPop-36, #bPop-37, #bPop-38, #bPop-39, #bPop-40, #bPop-41, 
+#bPop-42, #bPop-43, #bPop-44, #bPop-45, #bPop-46 {
    width: 100%;
    height: 100%;
    opacity: 95%;
@@ -834,9 +813,16 @@ a.button .button_icon i {
 #bPop-32 .r-box-txt{
   margin-top: 0.05em;
 }
+#bPop-32 .pad-lbox {
+  height: 22vh;
+}
+
+#bPop-33 .pad-lbox {
+  height: 15.2vh;
+}
 
 #bPop-33 .r-box {
-  height: 33.05em;
+  height: 30em;
 }
 
 #bPop-33 .r-box-txt{
@@ -883,8 +869,11 @@ a.button .button_icon i {
   margin-top: 0.05em;
 }
 
+#bPop-39 .pad-lbox {
+  height: 18vh;
+}
 #bPop-39 .r-box {
-  height: 33.05em;
+  height: 31.25em;
 }
 
 #bPop-39 .r-box-txt{
@@ -913,6 +902,18 @@ a.button .button_icon i {
 
 #bPop-42 .r-box-txt{
   margin-top: 0.05em;
+}
+
+#bPop-44 .pad-lbox {
+  height: 29.5vh;
+}
+
+#bPop-45 .r-box {
+  height: 77.3vh;
+}
+
+#bPop-46 .r-box {
+  height: 68vh;
 }
 
 /***************************************************************/
@@ -1132,21 +1133,30 @@ select#dropdown:focus {
 
 @media only screen and (max-width: 480px) {
   .squares-mob {
-    left: -3.5em;
+    left: 5vh;
+  }
+  .menu-home ul li:first-child h4 {
+    padding-left: 5vw;
+  }
+  .menu-home ul li:nth-child(2) h4 {
+    margin-left: -3vw;
+  }
+  .menu-home ul li:last-child h4 {
+    margin-left: 0.5vw;
   }
 
   .carousel-brand-container {
-    margin-left: 0;
+    margin-left: 2.5vw!important;
   }
-
-  .w3-content > .mySlides {
-    padding-left: 1.5em;
+  .carousel-but {
+    left: 20vw!important;
   }
-
   .slider-container {
     width: 100%;
     height: 600px;
-  }
+    min-height: 85vh!important;
+    background-color: #f4f7fc;
+}
 
   #slideshow img {
     object-fit: cover;
@@ -1155,15 +1165,15 @@ select#dropdown:focus {
   }
 
   #banner-txt{
-    top: 35em;
+    top: 33vh!important;
     left: 3em;
   }
     
   .slide-txt-top {
     top: 80em;
     left: 8em;
-    font-size: 5px;
-}
+    font-size: 5px!important;
+  }
   .slide-txt-1 {
     top: 15.5em;
     font-size: 35px;
@@ -1177,19 +1187,12 @@ select#dropdown:focus {
   } 
 
   .slide-but {
-    top: 43em;
+    top: 40vh!important;
     left: 2.5em;
   }
 
   .ml12 {
     font-size: 1.3em;
-  }
-
-  .w3-content {
-    display: none;
-  }
-  .swipeView {
-    display: inline-grid;
   }
 
   .equal-height-wrap div:nth-child(2) {
@@ -1686,15 +1689,6 @@ select#dropdown:focus {
     height: 35.25em;
   }
 
-  .slide-txt-top {
-    top: 37vh;
-  }
-  #banner-txt {
-    top: 50vh;
-  }
-  .slide-but {
-   top: 67vh;
-  }
   .menu-home {
     margin-left: 11vw;
   }
@@ -1710,21 +1704,11 @@ select#dropdown:focus {
 /* Mid-Res 1440 */
 @media only screen and (min-width: 1440px) {
   #bPopup {
-    top: 20%;
-    left: 8%;
+    top: 12vh;
+    left: 20vh;
   }
   #bPop-1 .pad-lbox {
       height: 9.55em;
-  }
-
-  .slide-txt-top {
-    top: 27vh;
-  }  
-  #banner-txt {
-    top: 40vh;
-  }
-  .slide-but {
-    top: 60vh;
   }
 
   .menu-home {
@@ -1735,7 +1719,10 @@ select#dropdown:focus {
     margin-left: 9em;
   }
   .carousel-but {
-    margin-left: 7em;
+    margin-left: -3vw;
+  }
+  .section_wrapper.mcb-section-inner blockquote {
+    left: 42vw;
   }
 }
 
@@ -1760,4 +1747,25 @@ select#dropdown:focus {
       margin-left: 42vw;
   }
 
+}
+
+/* IE */
+@media all and (-ms-high-contrast: none), (ms-high-contrast: active) {
+
+  .slide-txt-top {
+    top: 20em;
+  }
+  #banner-txt {
+    top: 18em;
+  }
+  .slide-but {
+    top: 35em;
+  }
+  .slider-container img {
+    width: 1500px!important;
+  }
+
+  .section_wrapper, .container {
+    width: 1220px;
+  }
 }

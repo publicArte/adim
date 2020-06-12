@@ -1,3 +1,4 @@
+// Fall-Down initial view
 (function() {
   var elements;
   var windowHeight;
@@ -25,3 +26,17 @@
   init();
   checkPosition();
 })();
+
+// Bounce when in view
+$(window).scroll(function() {
+   var oT = $('.scroll-anim').offset().top,
+       oH = $('.scroll-anim').outerHeight(),
+       wH = $(window).height(),
+       wS = $(this).scrollTop();
+   if (wS > (oT+oH-wH) && (oT > wS) && (wS+wH > oT+oH)){
+      $('.scroll-anim').addClass('bounce')
+   } else {
+      $('.scroll-anim').removeClass('bounce')
+   }
+});
+
