@@ -1251,16 +1251,24 @@ select#dropdown:focus {
 /* Tablet screen */
 
 @media only screen and (max-width: 768px) {
+  .slider-container {
+    width: 100%;
+    height: 600px;
+  }
+  #slideshow img {
+    object-fit: cover;
+    height: 600px;
+  }
   .slid-con {
     min-height: 70vh;
   }  
   .slide-txt-top {
-    top: 120px!important;
+    top: 33vh;
     font-size: 5px;
     left: 7em;
   }
   #banner-txt {
-    top: 170px!important;
+    top: 40vh;
   }
   .slide-txt-1 {
     font-size: 40px;
@@ -1269,7 +1277,7 @@ select#dropdown:focus {
     font-size: 20px;
   }
   .slide-but {
-    top: 270px!important;
+    top: 52vh;
   }
 
   .menu-home {
@@ -1305,7 +1313,6 @@ select#dropdown:focus {
   #Footer .container div:nth-of-type(2) img {
     margin-left: -4em;
   }
-}
   .copyright {
     margin-left: 10em;
   }
@@ -1313,6 +1320,9 @@ select#dropdown:focus {
 /* Mobile */
 
 @media only screen and (max-width: 480px) {
+  .menu-home {
+    margin-left: 11vw;
+  }  
   .squares-mob {
     left: 5vh;
   }
@@ -1335,12 +1345,11 @@ select#dropdown:focus {
   .slider-container {
     width: 100%;
     height: 600px;
-    min-height: 85vh!important;
-    background-color: #f4f7fc;
   }
 
   #slideshow img {
     object-fit: cover;
+    object-position: 60% 40%;
     width: 480px;
     height: 600px;
   }
@@ -1360,18 +1369,19 @@ select#dropdown:focus {
     font-size: 35px;
     line-height: 0;
   }
-
   .slide-txt-2 {
     top: 35em;
     font-size: 15px;
     line-height: 0;
   } 
-
   .slide-but {
     top: 50vh;
     left: 2.5em;
   }
 
+  select#dropdown {
+      margin-left: 4em;
+  }
   .ml12 {
     font-size: 1.3em;
   }
@@ -1391,6 +1401,10 @@ select#dropdown:focus {
     width: 60vw;
   }
 
+  #contactWrapper h3 {
+      margin-left: 17%;
+  }
+  
   #Footer img.scale-with-grid {
     padding-top: 0em!important;
     margin-left: 0em!important;
