@@ -585,6 +585,57 @@ a.button .button_icon i {
   margin-top: 1.95em;
 }
 
+#bPop-1 ul.list_check li, #bPop-2 ul.list_check li, #bPop-3 ul.list_check li, 
+#bPop-4 ul.list_check li, #bPop-5 ul.list_check li, #bPop-6 ul.list_check li, 
+#bPop-8 ul.list_check li, #bPop-28 ul.list_check li, #bPop-34 ul.list_check li,
+#bPop-36 ul.list_check li {
+  background: url(../images/icon-alimentos.png) no-repeat 20px 6px; 
+  background-size: 2em 2em;
+  background-position: 0.3em;
+}
+
+#bPop-7 ul.list_check li, #bPop-10 ul.list_check li, #bPop-11 ul.list_check li, 
+#bPop-12 ul.list_check li, #bPop-13 ul.list_check li, #bPop-14 ul.list_check li,
+#bPop-15 ul.list_check li, #bPop-16 ul.list_check li, #bPop-20 ul.list_check li, 
+#bPop-23 ul.list_check li, #bPop-25 ul.list_check li, #bPop-29 ul.list_check li,
+#bPop-32 ul.list_check li, #bPop-39 ul.list_check li, #bPop-44 ul.list_check li, 
+#bPop-41 ul.list_check li, #bPop-46 ul.list_check li {
+  background: url(../images/icon-limpieza.png) no-repeat 20px 6px; 
+  background-size: 2em 1.9em;
+  background-position: 0.3em -0.2em;
+}
+
+#bPop-9 ul.list_check li, #bPop-24 ul.list_check li {
+  background: url(../images/icon-auto.png) no-repeat 20px 6px; 
+  background-size: 2em 3em;
+  background-position: 0.3em;
+}
+
+#bPop-30 ul.list_check li, #bPop-35 ul.list_check li, #bPop-37 ul.list_check li,
+#bPop-43 ul.list_check li, #bPop-45 ul.list_check li {
+  background: url(../images/icon-dulces.png) no-repeat 20px 6px; 
+  background-size: 2em 2em;
+  background-position: 0.3em;
+}
+
+#bPop-21 ul.list_check li, #bPop-33 ul.list_check li {
+  background: url(../images/icon-escolar.png) no-repeat 20px 6px; 
+  background-size: 2em 1.9em;
+  background-position: 0.3em;
+}
+
+#bPop-26 ul.list_check li, #bPop-42 ul.list_check li {
+  background: url(../images/icon-mascotas.png) no-repeat 20px 6px; 
+  background-size: 2em 2em;
+  background-position: 0.3em;
+}
+
+#bPop-38 ul.list_check li {
+  background: url(../images/icon-desechables.png) no-repeat 20px 6px; 
+  background-size: 2em 2em;
+  background-position: 0.3em;
+}
+
 #bPop-2 .r-box-txt {
   margin-top: -2.05em;
 }
@@ -1160,14 +1211,21 @@ select#dropdown:focus {
   }
 
   .menu-home {
-    margin-left: 12vw;
+    margin-left: 12vw!important;
   }
 
   .carousel-brand-container {
-      margin-left: 12vw;
+      margin-left: 12vw!important;
   }
   .carousel-but {
-      left: 35vw;
+      left: 35vw!important;
+  }
+
+  .section_wrapper.mcb-section-inner blockquote:nth-of-type(1) {
+    left: 48vw!important;
+  }
+  .section_wrapper.mcb-section-inner blockquote footer {
+    margin-left: 63vw!important;
   }
 
   #bPopup .r-box {
@@ -1178,7 +1236,7 @@ select#dropdown:focus {
   }
 
   #bPop-1 .pad-lbox {
-    height: 15vh;
+    height: 17.7vh!important;
   }
   #bPop-1 .r-box {
     height: 71.1vh;
@@ -1190,6 +1248,13 @@ select#dropdown:focus {
 
   #bPop-5 .pad-lbox {
     height: 21.2vh;
+  }
+
+  #bPop-9 .l-box-txt {
+    height: 28vh;
+  }
+  #bPop-9 .r-box {
+    height: 79.5vh;
   }
 
   #bPop-17 .pad-lbox {
@@ -1220,6 +1285,40 @@ select#dropdown:focus {
     height: 88vh;
   }
 
+  #bPop-24 .l-box-txt {
+    height: 33vh;
+  }
+  #bPop-24 .r-box {
+    height: 84.5vh;
+  }
+
+  #bPop-26 .l-box-txt {
+      height: 25.8vh;
+  }
+
+  #bPop-32 .r-box {
+    height: 72.7vh;
+  }
+
+  #bPop-33 .r-box {
+    height: 72.7vh;
+  }
+
+  #bPop-39 .r-box {
+    height: 72.7vh;
+  }
+
+  #bPop-44 .pad-lbox {
+    height: 25.8vh;
+  }
+
+  #bPop-43 .pad-lbox {
+    height: 25.8vh;
+  }
+
+  #bPop-46 .r-box {
+    height: 68vh;
+  }
 }
 
 /* Normal screen */
@@ -1231,21 +1330,9 @@ select#dropdown:focus {
 
   select#dropdown {
     display: inline-block;
-    margin-left: 4em;
+    margin-left: 32vw;
   }
 
-  .slide-txt-top {
-    top: 33em;
-    left: 4em;
-  }  
-  #banner-txt {
-    top: 27em;
-    left: 2em;
-  }
-  .slide-but {
-    top: 47em;
-    left: 3em;
-  }
 }
 
 /* Tablet screen */
@@ -1553,6 +1640,7 @@ select#dropdown:focus {
 
 @media only screen and (min-width: 1024px) {
   #bPopup {
+    top: 12vh;
     left: 3%;
   }
 

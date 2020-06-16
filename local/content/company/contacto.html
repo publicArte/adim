@@ -359,13 +359,18 @@
                                             <div class="column_attr clearfix">
                                                 <div id="contactWrapper">
                                                   <h3><b>CONTACTATE CON NOSOTROS</b></h3>
-                                                    <form id="contactform">
+                                                    <form id="c16ee1dbe1fbab805c9ff0ff89d3c203" action="https://www.publicarteni.com/adim/perfex_crm/forms/wtl/c16ee1dbe1fbab805c9ff0ff89d3c203" enctype="multipart/form-data" method="post" accept-charset="utf-8" novalidate="novalidate">
+                                                      <input type="hidden" name="csrf_token_name" value="5155318d3928445399a3b0905afc4ff6">
+                                                      <input type="hidden" name="key" value="c16ee1dbe1fbab805c9ff0ff89d3c203">
                                                         <!-- One Second (1/2) Column -->
-                                                        <div class="column one-second">
-                                                            <input placeholder="Nombre" type="text" name="name" id="name" size="40" aria-required="true" aria-invalid="false" />
+                                                        <div class="column one-second" datatype="text" data-name="name" data-required="1">
+                                                          <label for="name">
+                                                            <span class="text-danger"></span>
+                                                          </label>
+                                                            <input placeholder="Nombre" type="text" name="name" id="name" size="40" required="true" aria-required="true" aria-invalid="false" value/>
                                                         </div>
                                                         <!-- One Second (1/2) Column -->
-                                                        <div class="column one-second">
+                                                        <div class="column one-second" data-type="text" data-name"email" data-required="false">
                                                             <input placeholder="E-mail" type="email" name="email" id="email" size="40" aria-required="true" aria-invalid="false" />
                                                         </div>
                                                         <div class="column one">
@@ -375,7 +380,7 @@
                                                             <textarea placeholder="Mensaje" name="body" id="body" style="width:100%;" rows="10" aria-invalid="false"></textarea>
                                                         </div>
                                                         <div class="column one">
-                                                            <input type="button" value="Enviar Mensajes" id="submit" onClick="return check_values();">
+                                                          <button type="submit"  id="form_submit">Enviar Mensajes</buton>
                                                         </div>
                                                     </form>
                                                 </div>
@@ -463,7 +468,6 @@
 
         <!-- JS -->
         <script src="../../js/jquery-2.1.4.min.js"></script>
-
         <script src="../../js/mfn.menu.js"></script>
         <script src="../../js/jquery.plugins.js"></script>
         <script src="../../js/jquery.jplayer.min.js"></script>
@@ -473,7 +477,79 @@
         <script src="../../js/slideShow.js"></script>
 
 
- 
+        <!-- CRM Form JS -->
+
+        <script type="text/javascript" id="jquery-js" src="https://www.publicarteni.com/adim/perfex_crm/assets/plugins/jquery/jquery.min.js?v=2.3.1"></script>
+<script>
+   $.noConflict(true);
+</script>        <script type="text/javascript" id="jquery-validation-js" src="https://www.publicarteni.com/adim/perfex_crm/assets/plugins/jquery-validation/jquery.validate.min.js?v=2.3.1"></script>
+        <script type="text/javascript" id="moment-js" src="https://www.publicarteni.com/adim/perfex_crm/assets/plugins/app-build/moment.min.js?v=2.3.1"></script> 
+        <script type="text/javascript" id="datetimepicker-js" src="https://www.publicarteni.com/adim/perfex_crm/assets/plugins/datetimepicker/jquery.datetimepicker.full.min.js?v=2.3.1"></script>
+<script>
+var form_id = '#c16ee1dbe1fbab805c9ff0ff89d3c203';
+ $(function() {
+   $(form_id).validate({
+
+    submitHandler: function(form) {
+
+     $("input[type=file]").each(function() {
+          if($(this).val() === "") {
+              $(this).prop('disabled', true);
+          }
+      });
+
+     var formURL = $(form).attr("action");
+     var formData = new FormData($(form)[0]);
+
+     $('#form_submit').prop('disabled', true);
+
+     $.ajax({
+       type: $(form).attr('method'),
+       data: formData,
+       mimeType: $(form).attr('enctype'),
+       contentType: false,
+       cache: false,
+       processData: false,
+       url: formURL
+     }).done(function(response){
+      $('#form_submit').prop('disabled', false);
+      response = JSON.parse(response);
+                 // In case action hook is used to redirect
+                 if (response.redirect_url) {
+                     window.top.location.href = response.redirect_url;
+                     return;
+                 }
+                 if (response.success == false) {
+                     $('#recaptcha_response_field').html(response.message); // error message
+                   } else if (response.success == true) {
+                     $(form_id).remove();
+                     $('<div class="alert alert-success">'+response.message+'</div>').appendTo('#contactWrapper');
+                     $('html,body').animate({
+                       scrollTop: $("#contactWrapper").offset().top
+                     },'slow');
+                   } else {
+                     $('#response').html('Something went wrong...');
+                   }
+                   if (typeof(grecaptcha) != 'undefined') {
+                     grecaptcha.reset();
+                   }
+                 }).fail(function(data){
+                 if (typeof(grecaptcha) != 'undefined') {
+                   grecaptcha.reset();
+                 }
+                 if(data.status == 422) {
+                    $('#response').html('<div class="alert alert-danger">Some fields that are required are not filled properly.</div>');
+                 } else {
+                    $('#response').html(data.responseText);
+                 }
+               });
+                 return false;
+               }
+             });
+ });
+</script>
+
+
 </body>
 
 </html>
