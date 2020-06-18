@@ -371,13 +371,28 @@
                                                         </div>
                                                         <!-- One Second (1/2) Column -->
                                                         <div class="column one-second" data-type="text" data-name"email" data-required="false">
+                                                          <label for="name">
+                                                            <span class="text-danger"></span>
+                                                          </label>
                                                             <input placeholder="E-mail" type="email" name="email" id="email" size="40" aria-required="true" aria-invalid="false" />
                                                         </div>
-                                                        <div class="column one">
-                                                            <input placeholder="Asunto" type="text" name="subject" id="subject" size="40" aria-invalid="false" />
+                                                        <div class="column one-second" data-type="text" data-name="phonenumber" data-required="false">
+                                                          <label for="phonenumber">
+                                                            <span class="text-danger"></span>
+                                                          </label>
+                                                            <input placeholder="Teléfono" type="text" name="phonenumber" id="phonenumber" size="40"  aria-invalid="false" />
+                                                        </div>
+                                                        <div class="column one-second">
+                                                          <label for="address">
+                                                            <span class="text-danger"></span>
+                                                          </label>
+                                                            <input placeholder="Dirección" type="text" name="address" id="address" size="40" aria-invalid="false" />
                                                         </div>
                                                         <div class="column one">
-                                                            <textarea placeholder="Mensaje" name="body" id="body" style="width:100%;" rows="10" aria-invalid="false"></textarea>
+                                                          <label for="description">
+                                                            <span class="text-danger"></span>
+                                                          </label>
+                                                            <textarea placeholder="Mensaje" name="description" id="description" style="width:100%;" rows="10" aria-invalid="false"></textarea>
                                                         </div>
                                                         <div class="column one">
                                                           <button type="submit"  id="form_submit">Enviar Mensajes</buton>
@@ -523,12 +538,12 @@ var form_id = '#c16ee1dbe1fbab805c9ff0ff89d3c203';
                      $('#recaptcha_response_field').html(response.message); // error message
                    } else if (response.success == true) {
                      $(form_id).remove();
-                     $('<div class="alert alert-success">'+response.message+'</div>').appendTo('#contactWrapper');
+                     $('<div class="alert alert-success">'+response.message+'</div>').fadeIn('slow').appendTo('#contactWrapper');
                      $('html,body').animate({
                        scrollTop: $("#contactWrapper").offset().top
                      },'slow');
                    } else {
-                     $('#response').html('Something went wrong...');
+                     $('#contactWrapper').html('Something went wrong...');
                    }
                    if (typeof(grecaptcha) != 'undefined') {
                      grecaptcha.reset();
@@ -538,9 +553,9 @@ var form_id = '#c16ee1dbe1fbab805c9ff0ff89d3c203';
                    grecaptcha.reset();
                  }
                  if(data.status == 422) {
-                    $('#response').html('<div class="alert alert-danger">Some fields that are required are not filled properly.</div>');
+                    $('#contactWrapper').html('<div class="alert alert-danger">Some fields that are required are not filled properly.</div>');
                  } else {
-                    $('#response').html(data.responseText);
+                    $('#contactWrapper').html(data.responseText);
                  }
                });
                  return false;
