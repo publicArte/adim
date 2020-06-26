@@ -495,74 +495,75 @@
         <!-- CRM Form JS -->
 
         <script type="text/javascript" id="jquery-js" src="https://www.publicarteni.com/adim/perfex_crm/assets/plugins/jquery/jquery.min.js?v=2.3.1"></script>
-<script>
-   $.noConflict(true);
-</script>        <script type="text/javascript" id="jquery-validation-js" src="https://www.publicarteni.com/adim/perfex_crm/assets/plugins/jquery-validation/jquery.validate.min.js?v=2.3.1"></script>
+        <script>
+           $.noConflict(true);
+        </script>
+        <script type="text/javascript" id="jquery-validation-js" src="https://www.publicarteni.com/adim/perfex_crm/assets/plugins/jquery-validation/jquery.validate.min.js?v=2.3.1"></script>
         <script type="text/javascript" id="moment-js" src="https://www.publicarteni.com/adim/perfex_crm/assets/plugins/app-build/moment.min.js?v=2.3.1"></script> 
         <script type="text/javascript" id="datetimepicker-js" src="https://www.publicarteni.com/adim/perfex_crm/assets/plugins/datetimepicker/jquery.datetimepicker.full.min.js?v=2.3.1"></script>
-<script>
-var form_id = '#c16ee1dbe1fbab805c9ff0ff89d3c203';
- $(function() {
-   $(form_id).validate({
+        <script>
+        var form_id = '#c16ee1dbe1fbab805c9ff0ff89d3c203';
+         $(function() {
+           $(form_id).validate({
 
-    submitHandler: function(form) {
+            submitHandler: function(form) {
 
-     $("input[type=file]").each(function() {
-          if($(this).val() === "") {
-              $(this).prop('disabled', true);
-          }
-      });
+             $("input[type=file]").each(function() {
+                  if($(this).val() === "") {
+                      $(this).prop('disabled', true);
+                  }
+              });
 
-     var formURL = $(form).attr("action");
-     var formData = new FormData($(form)[0]);
+             var formURL = $(form).attr("action");
+             var formData = new FormData($(form)[0]);
 
-     $('#form_submit').prop('disabled', true);
+             $('#form_submit').prop('disabled', true);
 
-     $.ajax({
-       type: $(form).attr('method'),
-       data: formData,
-       mimeType: $(form).attr('enctype'),
-       contentType: false,
-       cache: false,
-       processData: false,
-       url: formURL
-     }).done(function(response){
-      $('#form_submit').prop('disabled', false);
-      response = JSON.parse(response);
-                 // In case action hook is used to redirect
-                 if (response.redirect_url) {
-                     window.top.location.href = response.redirect_url;
-                     return;
-                 }
-                 if (response.success == false) {
-                     $('#recaptcha_response_field').html(response.message); // error message
-                   } else if (response.success == true) {
-                     $(form_id).remove();
-                     $('<div class="alert alert-success">'+response.message+'</div>').fadeIn('slow').appendTo('#contactWrapper');
-                     $('html,body').animate({
-                       scrollTop: $("#contactWrapper").offset().top
-                     },'slow');
-                   } else {
-                     $('#contactWrapper').html('Something went wrong...');
-                   }
-                   if (typeof(grecaptcha) != 'undefined') {
-                     grecaptcha.reset();
-                   }
-                 }).fail(function(data){
-                 if (typeof(grecaptcha) != 'undefined') {
-                   grecaptcha.reset();
-                 }
-                 if(data.status == 422) {
-                    $('#contactWrapper').html('<div class="alert alert-danger">Some fields that are required are not filled properly.</div>');
-                 } else {
-                    $('#contactWrapper').html(data.responseText);
-                 }
-               });
-                 return false;
-               }
-             });
- });
-</script>
+             $.ajax({
+               type: $(form).attr('method'),
+               data: formData,
+               mimeType: $(form).attr('enctype'),
+               contentType: false,
+               cache: false,
+               processData: false,
+               url: formURL
+             }).done(function(response){
+              $('#form_submit').prop('disabled', false);
+              response = JSON.parse(response);
+                         // In case action hook is used to redirect
+                         if (response.redirect_url) {
+                             window.top.location.href = response.redirect_url;
+                             return;
+                         }
+                         if (response.success == false) {
+                             $('#recaptcha_response_field').html(response.message); // error message
+                           } else if (response.success == true) {
+                             $(form_id).remove();
+                             $('<div class="alert alert-success">'+response.message+'</div>').fadeIn('slow').appendTo('#contactWrapper');
+                             $('html,body').animate({
+                               scrollTop: $("#contactWrapper").offset().top
+                             },'slow');
+                           } else {
+                             $('#contactWrapper').html('Something went wrong...');
+                           }
+                           if (typeof(grecaptcha) != 'undefined') {
+                             grecaptcha.reset();
+                           }
+                         }).fail(function(data){
+                         if (typeof(grecaptcha) != 'undefined') {
+                           grecaptcha.reset();
+                         }
+                         if(data.status == 422) {
+                            $('#contactWrapper').html('<div class="alert alert-danger">Some fields that are required are not filled properly.</div>');
+                         } else {
+                            $('#contactWrapper').html(data.responseText);
+                         }
+                       });
+                         return false;
+                       }
+                     });
+         });
+        </script>
 
 
 </body>
