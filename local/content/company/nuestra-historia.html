@@ -165,13 +165,13 @@
                             <div class="section_wrapper mcb-section-inner">
                                 <div class="wrap mcb-wrap one valign-top clearfix" style="padding:50px 50px 20px; background-color:#57b046">
                                     <div class="mcb-wrap-inner">
-                                        <div class="column mcb-column one-fourth column_column">
+                                        <div class="column mcb-column one-third column_column" style="padding-right: 5vw;">
                                             <div class="column_attr clearfix">
-                                              <h3 class="backInDown" style="color:#fff"><strong>SOMOS PARTE DE TI #SOMOSADIM</strong>
-                                                </h3>
+                                                <h1 class="ml16" style="color:#fff"><span>SOMOS PARTE DE TI #SOMOSADIM</span>
+                                                </h1>
                                             </div>
                                         </div>
-                                        <div class="column mcb-column one-fourth column_counter dark">
+                                        <div class="column mcb-column one-fifth column_counter dark">
                                             <div class="counter counter_vertical animate-math">
                                                 <div class="icon_wrapper">
                                                 	<img src="images/home_company_about3.png">
@@ -186,7 +186,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="column mcb-column one-fourth column_counter dark">
+                                        <div class="column mcb-column one-fifth column_counter dark">
                                             <div class="counter counter_vertical animate-math">
                                                 <div class="icon_wrapper">
                                                 	<img src="images/home_company_about4.png">
@@ -201,7 +201,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="column mcb-column one-fourth column_counter dark">
+                                        <div class="column mcb-column one-fifth column_counter dark">
                                             <div class="counter counter_vertical animate-math">
                                                 <div class="icon_wrapper">
                                                 	<img src="images/home_company_about5.png">
@@ -361,7 +361,7 @@
                                     <br> Masaya, Nicaragua
                                 </p>
                                 <p class="big">
-                                    <i style="color: #c6464b;" class="icon-mail"></i><a href="contacto@adim.com.ni"><span>contacto@adim.com.ni</span></a>
+                                    <i style="color: #c6464b;" class="icon-mail"></i><a href="ac@adim.com.ni"><span>ac@adim.com.ni</span></a>
                                 </p>
                                 <p class="big">
                                     <i style="color: #c6464b;" class="icon-phone"></i><a href="tel:+505 2522-2513"><span>+505 2522-2513</span></a>
@@ -407,8 +407,31 @@
     <script src="../../js/scripts.js"></script>
     <script src="../../js/photoSlider.js"></script>
     <script src="../../js/slideShow.js"></script>
+    <script src="../../js/anime.min.js"></script>
 	
-	
+    <!-- Animated Text  -->
+<script type="text/javascript">
+	// Wrap every letter in a span
+var textWrapper1 = document.querySelector('.ml16');
+textWrapper1.innerHTML = textWrapper1.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+anime.timeline({loop: true})
+  .add({
+    targets: '.ml16 .letter',
+    translateY: [-100,0],
+    easing: "easeOutExpo",
+    duration: 1400,
+    delay: (el, i) => 30 * i
+  }).add({
+    targets: '.ml16',
+    opacity: 0,
+    duration: 1000,
+    easing: "easeOutExpo",
+    delay: 1000
+  });
+</script>
+
+
 	<!--Start of Tawk.to Script-->
 <script type="text/javascript">
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();

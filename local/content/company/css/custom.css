@@ -197,6 +197,24 @@ a.button .button_icon i {
     margin-top: -1vh;
 }
 
+.hover_color .hover_color_bg {
+  border-radius: 50%;
+  width: 80%;
+  margin-left: 2vw;
+  background-color: #0052ae!important;
+}
+
+.hover_color .hover_color_bg h4 {
+  color: white;
+}
+.hover_color .hover_color_bg:hover h4 {
+  color: #0052ae;
+}
+
+
+.fall-down .column_hover_color:nth-child(even) img {
+  margin-left: 1vw;
+}
 
 /*Animation*/
 
@@ -279,6 +297,21 @@ a.button .button_icon i {
   right: 0;
   opacity: 0; 
 }
+
+.ml16 {
+  color: #402d2d;
+  padding: 40px 0;
+  font-weight: 800;
+  font-size: 1.7em;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  overflow: hidden;
+}
+.ml16 .letter {
+  display: inline-block;
+  line-height: 1em;
+}
+
 /***************************************************************/
 /* Banner Slider */
 /***************************************************************/
